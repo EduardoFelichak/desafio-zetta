@@ -80,6 +80,10 @@ export async function vendedorRoutes(app: FastifyInstance) {
         const { id } = deleteVendedorParams.parse(request.params)
 
         try {
+            await prisma.venda.deleteMany({
+                where: { vendedorId: id },
+            })
+
             await prisma.vendedor.delete({
                 where: { id },
             })

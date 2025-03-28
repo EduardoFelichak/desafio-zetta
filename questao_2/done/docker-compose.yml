@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   db:
     image: postgres:15
@@ -13,29 +15,22 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   backend:
-    build: ./backend
+    image: eduardofelichak/comissions-backend
     container_name: comissions_backend
     restart: always
     ports:
       - "3333:3333"
     depends_on:
       - db
-    env_file:
-      - ./backend/.env
-    volumes:
-      - ./backend:/app
-      - /app/node_modules   
 
   frontend:
-    build: ./frontend
+    image: eduardofelichak/comissions-frontend
     container_name: comissions_frontend
     restart: always
     ports:
       - "8080:8080"
     depends_on:
       - backend
-    volumes:
-      - ./frontend:/app
 
 volumes:
   pgdata:

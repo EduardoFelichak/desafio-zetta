@@ -7,13 +7,14 @@ import { comissaoRoutes } from "./routes/comissoes"
 const app = fastify()
 
 app.register(cors, {
-    origin: true, 
-})
+    origin: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  })
 
 app.register( vendedorRoutes )
 app.register( vendaRoutes    )
 app.register( comissaoRoutes )
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
     console.log('HTTP server running!')
 })
