@@ -19,6 +19,15 @@ Nada de errado no fonte.
 
 ## Questão 1 do cliente:
 
+Aplicação no terminal implementada de forma simples e direta.
+- [Arquivo fonte](questao_1/fonte.php)
+- [Vídeo Explicativo](videos/questao_1.mkv)
+
 ---
 
 ## Questão 2 do cliente:
+
+Aplicação criada com node.ts, postgresql e html. Rodando de forma containerizada com docker.
+- [Arquivos fontes](questao_2)
+- [Vídeo Explicativo](videos/questao_2.mkv)
+- [Para baixar e testar](questao_2/done)
