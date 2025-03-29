@@ -15,12 +15,12 @@ $(document).ready(() => {
     fetch(URL_VENDEDORES)
         .then(res => res.json())
         .then(data => {
-        vendedores = data
-        const select = $('#vendedor-id')
-        select.empty()
-        vendedores.forEach(v => {
-            select.append(`<option value="${v.id}">${v.nome}</option>`)
-        })
+            vendedores = data
+            const select = $('#vendedor-id')
+            select.empty()
+            vendedores.forEach(v => {
+                select.append(`<option value="${v.id}">${v.nome}</option>`)
+            })
         })
         .catch(console.error)
     }

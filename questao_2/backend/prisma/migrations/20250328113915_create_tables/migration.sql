@@ -18,6 +18,16 @@ CREATE TABLE "Venda" (
     CONSTRAINT "Venda_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Comissao" (
+    "id" TEXT NOT NULL,
+    "faixaInicial" DOUBLE PRECISION NOT NULL,
+    "faixaFinal" DOUBLE PRECISION NOT NULL,
+    "porcentagem" DOUBLE PRECISION NOT NULL,
+
+    CONSTRAINT "Comissao_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "Vendedor_email_key" ON "Vendedor"("email");
 

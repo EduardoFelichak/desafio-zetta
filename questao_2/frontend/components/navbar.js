@@ -14,6 +14,9 @@ export function getNavBar(){
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li> 
                     <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="comissao.html">Comissões</a>
+                    </li> 
+                    <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="vendedor.html">Vendedores</a>
                     </li> 
                     <li class="nav-item">

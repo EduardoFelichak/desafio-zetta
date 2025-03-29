@@ -6,8 +6,22 @@ const prisma = new PrismaClient()
 async function seed() {
   console.log('⏳ Apagando registros existentes...')
 
+  await prisma.comissao.deleteMany()
   await prisma.venda.deleteMany()
   await prisma.vendedor.deleteMany()
+
+  console.log('🌱 Inserindo faixas de comissão...')
+
+  const faixasComissao = [
+    { faixaInicial: 0.01, faixaFinal: 1000, porcentagem: 0.05 },
+    { faixaInicial: 1000.01, faixaFinal: 10000, porcentagem: 0.10 },
+    { faixaInicial: 10000.01, faixaFinal: 100000, porcentagem: 0.20 },
+    { faixaInicial: 100000.01, faixaFinal: 1000000, porcentagem: 0.30 }
+  ]
+
+  await prisma.comissao.createMany({
+    data: faixasComissao,
+  })
 
   console.log('🌱 Inserindo vendedores e vendas...')
 

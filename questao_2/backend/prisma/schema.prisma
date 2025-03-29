@@ -24,3 +24,10 @@ model Venda {
 
   vendedor   Vendedor @relation(fields: [vendedorId], references: [id])
 }
+
+model Comissao {
+  id           String @id @default(uuid())
+  faixaInicial Float
+  faixaFinal   Float
+  porcentagem  Float
+}

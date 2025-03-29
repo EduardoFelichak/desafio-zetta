@@ -21,7 +21,7 @@ function formatarMes(yyyyMM) {
 
 $(document).ready(() => {
   $('header').append(getNavBar())
-  fetch('http://localhost:3333/vendedores/comissoes')
+  fetch('http://localhost:3333/vendedores/faturamento')
     .then(res => res.json())
     .then(data => {
       dadosComissoes = data
